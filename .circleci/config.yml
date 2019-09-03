@@ -30,11 +30,12 @@ jobs:
       - run: yarn install
 
       - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+        paths:
+          - node_modules
+        key: v1-dependencies-{{ checksum "package.json" }}
 
       # build
       - run: yarn build
+
       # run tests!
       - run: yarn test
