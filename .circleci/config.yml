@@ -19,7 +19,7 @@ jobs:
     steps:
       - checkout:
         path: ~/repo
-        
+
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -34,7 +34,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-			# build
+      # build
 			- run: yarn build
 
       # run tests!
